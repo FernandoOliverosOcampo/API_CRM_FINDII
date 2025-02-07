@@ -1,12 +1,13 @@
 from librerias import *
 from rutas.ruta_inicio_sesion import *
-
+from rutas.insertar_imagen import *
 app = Flask(__name__)
 jwt = JWTManager(app)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['JWT_SECRET_KEY'] = 'super-secret' # Clave secreta para firmar los JWT
 
 app.register_blueprint(inicio_de_sesion)
+app.register_blueprint(insertar)
 
 
 
